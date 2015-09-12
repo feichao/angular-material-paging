@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('fc.paging')
+    .module('fc.paging', [])
     .directive('wanMaterialPaging', WanMaterialPagingDirective);
 
   /**

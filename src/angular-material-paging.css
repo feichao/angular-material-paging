@@ -1,7 +1,5 @@
-.wan-material-paging {
-  .wmp-button {
-    width: 50px;
-    min-width: 50px;
-    margin: 5px;
-  }
+.wan-material-paging .wmp-button {
+  width: 50px;
+  min-width: 50px;
+  margin: 5px;
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoPaging">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>demo paging</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" href="bower_components/angular-material-paging/src/angular-material-paging.css">
+</head>
+
+<body>
+  <div class="wrapper" ng-controller="DemoCtrl">
+    <h2 style="text-align:center;">CurrentPage: {{ currentPage }}</h2>
+    <wan-material-paging wmp-total="total" goto-page="gotoPage()" position="center" current-page="currentPage" step="step">
+    </wan-material-paging>
+  </div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-material-paging/src/angular-material-paging.js"></script>
+  <script>
+  angular
+    .module('demoPaging', [
+      'ngMaterial',
+      'fc.paging'
+    ]).controller('DemoCtrl', DemoCtrl);
+
+  function DemoCtrl($scope) {
+    $scope.total = 50;
+    $scope.currentPage = 1;
+    $scope.step = 6;
+
+    $scope.gotoPage = function() {
+      console.log($scope.currentPage);
+    };
+  }
+  </script>
+</body>
+
+</html>
