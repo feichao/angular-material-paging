@@ -64,8 +64,9 @@
     };
 
     vm.gotoLast = function(){
-      vm.index = parseInt(vm.realyTotal / vm.step) * vm.step;
+      var index = parseInt(vm.realyTotal / vm.step) * vm.step;
       $scope.currentPage = $scope.wmpTotal;
+      index !== vm.realyTotal ? vm.index = index : null;
     };
 
     $scope.$watch('currentPage', function() {
