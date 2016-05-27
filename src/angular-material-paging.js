@@ -22,15 +22,15 @@
       controllerAs: 'vm',
       template: [
         '<div layout="row" class="wan-material-paging" layout-align="{{ position }}">',
-        '<md-button class="md-raised md-primary wmp-button" ng-click="vm.gotoFirst()">{{ vm.first }}</md-button>',
-        '<md-button class="md-raised wmp-button" ng-click="vm.getoPre()" ng-show="vm.index - 1 >= 0">...</md-button>',
-        '<md-button class="md-raised wmp-button" ng-repeat="i in vm.stepInfo"',
+        '<md-button class="md-raised md-primary wmp-button" aria-label="First" ng-click="vm.gotoFirst()">{{ vm.first }}</md-button>',
+        '<md-button class="md-raised wmp-button" aria-label="Previous" ng-click="vm.getoPre()" ng-show="vm.index - 1 >= 0">...</md-button>',
+        '<md-button class="md-raised wmp-button" aria-label="Go to page {{i+1}}" ng-repeat="i in vm.stepInfo"',
         ' ng-click="vm.goto(vm.index + i)" ng-show="vm.page[vm.index + i]" ',
         ' ng-class="{true: \'md-primary\', false: \'\'}[vm.page[vm.index + i] === currentPage]">',
         ' {{ vm.page[vm.index + i] }}',
         '</md-button>',
-        '<md-button class="md-raised wmp-button" ng-click="vm.getoNext()" ng-show="vm.index + vm.step < wmpTotal">...</md-button>',
-        '<md-button class="md-raised md-primary wmp-button" ng-click="vm.gotoLast()">{{ vm.last }}</md-button>',
+        '<md-button class="md-raised wmp-button" aria-label="Next" ng-click="vm.getoNext()" ng-show="vm.index + vm.step < wmpTotal">...</md-button>',
+        '<md-button class="md-raised md-primary wmp-button" aria-label="Last" ng-click="vm.gotoLast()">{{ vm.last }}</md-button>',
         '</div>'
       ].join('')
     };
@@ -39,7 +39,7 @@
   /**
    * @ngInject
    */
-  function Controller($scope) {
+  var	Controller = ['$scope', function ($scope) {
     var vm = this;
 
     vm.first = '<<';
@@ -98,6 +98,6 @@
       })();
 
     };
-  }
+  }];
 
 })();
