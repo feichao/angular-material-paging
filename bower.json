@@ -15,8 +15,6 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular": "1.3.15",
-    "angular-material": "~0.10.0"
   },
   "main": "src/angular-material-paging.js"
 }
