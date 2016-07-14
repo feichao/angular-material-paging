@@ -5,9 +5,6 @@
     .module('fc.paging', [])
     .directive('wanMaterialPaging', WanMaterialPagingDirective);
 
-  /**
-   * @ngInject
-   */
   function WanMaterialPagingDirective() {
     return {
       restrict: 'EA',
@@ -21,7 +18,7 @@
       controller: Controller,
       controllerAs: 'vm',
       template: [
-        '<div layout="row" class="paging" layout-align="{{ position }}">',
+        '<div class="paging">',
         '<a class="paging__link paging__link--first" aria-label="First" ng-click="vm.gotoFirst()">{{ vm.first }}</a>',
         '<a class="paging__link paging__link--previous" aria-label="Previous" ng-click="vm.getoPre()" ng-show="vm.index - 1 >= 0">...</a>',
         '<a class="paging__link" aria-label="Go to page {{i+1}}" ng-repeat="i in vm.stepInfo"',
