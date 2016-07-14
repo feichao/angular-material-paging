@@ -23,7 +23,7 @@
         '<a class="paging__link paging__link--previous" aria-label="Previous" ng-click="vm.getoPre()" ng-show="vm.index - 1 >= 0">...</a>',
         '<a class="paging__link" aria-label="Go to page {{i+1}}" ng-repeat="i in vm.stepInfo"',
         ' ng-click="vm.goto(vm.index + i)" ng-show="vm.page[vm.index + i]" ',
-        ' ng-class="{true: \'md-primary\', false: \'\'}[vm.page[vm.index + i] === currentPage]">',
+        ' ng-class="{true: \'selected\', false: \'\'}[vm.page[vm.index + i] === currentPage]">',
         ' {{ vm.page[vm.index + i] }}',
         '</a>',
         '<a class="paging__link paging__link--next" aria-label="Next" ng-click="vm.getoNext()" ng-show="vm.index + vm.step < wmpTotal">...</a>',
